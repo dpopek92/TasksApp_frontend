@@ -2,7 +2,7 @@ import axios from "axios";
 import { setTokens } from "common/utils/setTokens";
 
 const authorizedApi = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "http://localhost:3001",
   headers: {
     "Content-Type": "application/json",
   },
@@ -28,7 +28,6 @@ authorizedApi.interceptors.response.use(
     return res;
   },
   async (err) => {
-    console.log("AuthApi error response: ", err, err.response);
     const originalConfig = err.config;
 
     const currentRefreshToken = localStorage.getItem("refreshToken");

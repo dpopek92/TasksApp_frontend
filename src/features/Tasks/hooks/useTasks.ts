@@ -45,7 +45,7 @@ const useTasks = (searchQuery: ISearchTasks) => {
 
   const tasks = data?.data.content;
   const searchParams = data?.data.searchParams;
-  const isLoading = isTasksLoading || isRemoving;
+  const isLoading = isTasksLoading || isUpdating || isRemoving;
   const refetchTasks = refetch;
   const goToEditTask = (taskId: string) => navigate(`${taskId}/edit`);
   const updateTaskStatus = (taskId: string, status: TaskStatus) => {

@@ -1,5 +1,3 @@
-import { IUser } from "features/Users/interfaces/Users.interface";
-
 export enum TaskStatus {
   UNDONE = "UNDONE",
   DONE = "DONE",

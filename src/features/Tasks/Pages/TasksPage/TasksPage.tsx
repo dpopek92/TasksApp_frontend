@@ -1,5 +1,6 @@
 import { setDocumentTitle } from "common/utils/setDocumentTitle";
 import ConfirmationModal from "components/ConfirmationModal/ConfirmationModal";
+import Empty from "components/Empty/Empty";
 import LoadingSpinner from "components/LoadingSpinner/LoadingSpinner";
 import PageHeader from "components/PageHeader/PageHeader";
 import { useControledDebounce } from "hooks/useControledDebounce";
@@ -67,15 +68,21 @@ const TasksPage = () => {
 
       <Row className="mt-3 justify-content-center ">
         <Col sm={12} md={7}>
-          <div className="d-flex justify-content-end mb-2">
-            <Pagination />
-          </div>
-          <TasksList
-            tasks={tasks}
-            deleteTask={setTaskToDelete}
-            updateTaskStatus={updateTaskStatus}
-            editTask={goToEditTask}
-          />
+          {!tasks?.length ? (
+            <Empty />
+          ) : (
+            <>
+              <div className="d-flex justify-content-end mb-2">
+                <Pagination />
+              </div>
+              <TasksList
+                tasks={tasks}
+                deleteTask={setTaskToDelete}
+                updateTaskStatus={updateTaskStatus}
+                editTask={goToEditTask}
+              />
+            </>
+          )}
         </Col>
       </Row>
 

@@ -36,7 +36,7 @@ const LoginPage = () => {
       navigate("/");
     },
     onError: (error: AxiosError) => {
-      if (error.response?.status === 401) {
+      if (error.response?.status === 401 || error.response?.status === 404) {
         formik.setErrors({
           email: "Nieprawidłowe dane logowania",
           password: "Nieprawidłowe dane logowania",

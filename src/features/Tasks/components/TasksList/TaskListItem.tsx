@@ -23,7 +23,7 @@ const TaskListItem: React.FC<IProps> = ({
   deleteTask,
 }) => {
   return (
-    <ListGroup.Item>
+    <ListGroup.Item data-testid="tasks-list-item-test-id">
       <div className="d-flex justify-content-between">
         <div>
           <strong>

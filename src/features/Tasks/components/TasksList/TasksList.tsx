@@ -9,7 +9,7 @@ interface IProps extends ITaskItemHandlers {
 
 const TasksList: React.FC<IProps> = ({ tasks, ...props }) => {
   return (
-    <ListGroup>
+    <ListGroup data-testid="tasks-list-test-id">
       {tasks?.map((task) => (
         <TaskListItem task={task} key={task._id} {...props} />
       ))}

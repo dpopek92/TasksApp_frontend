@@ -7,9 +7,9 @@ export enum TaskStatus {
 
 export interface ITask {
   _id: string;
+  user: string;
   createdAt: Date;
   updatedAt: Date;
-  user: IUser;
   description: string;
   status: TaskStatus;
 }

@@ -15,7 +15,7 @@ interface IProps {
 
 const PageHeader: React.FC<IProps> = ({ title }) => {
   return (
-    <Wrapper>
+    <Wrapper data-testid="page-header-test-id">
       <h1>{title}</h1>
     </Wrapper>
   );

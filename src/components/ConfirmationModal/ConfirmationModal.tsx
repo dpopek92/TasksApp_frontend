@@ -13,7 +13,11 @@ const ConfirmationModal: React.FC<IProps> = ({
   closeModal,
 }) => {
   return (
-    <Modal show={true} onHide={closeModal}>
+    <Modal
+      show={true}
+      onHide={closeModal}
+      data-testid="confirmation-modal-test-id"
+    >
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>{confirmationModalText}</Modal.Body>
       <Modal.Footer>

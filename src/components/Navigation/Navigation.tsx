@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useMutation } from "@tanstack/react-query";
 import { authApi } from "features/Auth/api/auth.api";
 import { useNavigate } from "react-router";
@@ -21,11 +21,12 @@ const Navigation = () => {
   });
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
+    <Navbar expand="md" className="bg-body-tertiary">
+      <Container>
         <Navbar.Brand href="/">TasksAppLogo</Navbar.Brand>
 
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/new-task">
               Nowe zadanie
